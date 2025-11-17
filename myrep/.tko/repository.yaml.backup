@@ -12,7 +12,7 @@ sources:
   type: clone
   branch: master
   cache_path: C:\Users\User\OneDrive\Documentos\VS CODE\poo-dd-cd-bloco-c-Maria-Myllene\myrep\.tko\cache\poo\Readme.md
-  cache_timestamp: '2025-11-08 17:43:51'
+  cache_timestamp: '2025-11-11 15:51:55'
   filters:
   - listas
 expanded:
@@ -20,6 +20,7 @@ expanded:
 - poo@bloco_c-listas
 tasks:
   poo@budega: '{rate:100, iagen:s, other:s, alone:6, study:180}'
+  poo@pula-pula: '{rate:40}'
 flags:
   quests: 0
   tracks: 0
@@ -27,4 +28,4 @@ flags:
   graph: 1
   xray: 0
 lang: py
-selected: poo@lapiseira
+selected: poo@pula-pula

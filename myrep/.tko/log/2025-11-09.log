@@ -11,3 +11,4 @@
 2025-11-09 00:37:48, EXEC, v:1, k:poo@budega, mode:FULL, rate:100, size:73
 2025-11-09 00:38:46, MOVE, v:1, k:poo@budega, mode:BACK
 2025-11-09 00:40:40, SELF, v:1, k:poo@budega, rate:100, iagen:s, other:s, alone:6, study:180
+2025-11-09 00:49:41, MOVE, v:1, k:poo@lapiseira, mode:DOWN
