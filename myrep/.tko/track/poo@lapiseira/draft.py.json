@@ -1,0 +1,124 @@
+{
+    "patches": [
+        {
+            "label": "2025-11-17_13-56-35",
+            "content": "@@ -344,178 +344,65 @@\n lf, \n-calibre: float, bico: Lead %7C None):%0A        self.calibre =  None%0A        self.bico = None%0A        self.barrel: list%5BLead%5D = %5B%5D%0A%0A    def initLapiseira(self, tamanho: float\n+thicknessPencil: float, grafite: Lead, barrel: list%5BLead%5D\n ):%0A \n@@ -405,34 +405,32 @@\n ):%0A        self.\n-__\n thickness = tama\n@@ -426,590 +426,47 @@\n ness\n- = tamanho%0A        return True%0A    %0A    def __str__ (self):%0A        return f%22calibre: %7Bself.calibre%7D, bico: %5B%7Bself.bico%7D%5D, tambor: %3C%7Bself.barrel%7D%3E%22%0A%0Adef main():%0A    lapiseira = Pencil(0)%0A%0A    while True:%0A        line = input()%0A        args: list%5Bstr%5D = line.split(%22 %22)%0A        print(%22$%22 + line)%0A%0A        if args %5B0%5D == %22end%22:%0A            break%0A        elif args %5B0%5D == %22init%22:%0A            tamanho = float(args%5B1%5D)%0A            lapiseira.initLapiseira(tamanho)%0A        elif args %5B0%5D == %22show%22:%0A            print(lapiseira)%0A        else:%0A            print(%22fail: comando invalido%22)%0A%0Amain()\n+Pencil =  None%0A        self.grafite = None%0A\n",
+            "lines": "13"
+        },
+        {
+            "label": "2025-11-17_14-10-24",
+            "content": "@@ -726,14 +726,8 @@\n il(0\n-.0, %22%22\n )%0A%0A \n",
+            "lines": "41"
+        },
+        {
+            "label": "2025-11-17_14-11-13",
+            "content": "@@ -526,23 +526,27 @@\n    self.\n-calibre\n+__thickness\n  = taman\n",
+            "lines": "41"
+        },
+        {
+            "label": "2025-11-17_14-12-22",
+            "content": "@@ -597,130 +597,8 @@\n f):%0A\n-        if self.calibre == None or self.barrel == %5B%5D:%0A            return f%22calibre: %7Bself.calibre%7D, bico: %5B%5D, tambor: %3C%3E%22%0A\n     \n",
+            "lines": "41"
+        },
+        {
+            "label": "2025-11-17_14-14-34",
+            "content": "@@ -34,24 +34,28 @@\n f, thickness\n+Graf\n : float, har\n@@ -102,16 +102,20 @@\n hickness\n+Graf\n : float \n@@ -121,24 +121,28 @@\n  = thickness\n+Graf\n %0A        sel\n@@ -806,79 +806,8 @@\n l%7D%3E%22\n-%0A    %0A    def insert (self, grafite: Lead):%0A        self.bico = grafite\n %0A%0Ade\n@@ -1153,16 +1153,16 @@\n %22show%22:%0A\n+\n         \n@@ -1186,240 +1186,8 @@\n ra)%0A\n-        elif args %5B0%5D == %22insert%22:%0A            thickness = float(args%5B1%5D)%0A            hardness = args%5B2%5D%0A            size = int(args%5B3%5D)%0A            grafite = Lead(thickness, hardness, size)%0A            lapiseira.setInsert(grafite)%0A\n     \n",
+            "lines": "43"
+        },
+        {
+            "label": "2025-11-17_14-18-48",
+            "content": "@@ -1454,17 +1454,20 @@\n piseira.\n-i\n+setI\n nsert(gr\n",
+            "lines": "52"
+        },
+        {
+            "label": "2025-11-17_14-19-01",
+            "content": "@@ -293,74 +293,8 @@\n e%7D%5D%22\n-%0A    %0A    def getThickness (self):%0A        return self.__thickness\n %0A%0Acl\n@@ -838,107 +838,8 @@\n d):%0A\n-        if self.calibre != grafite.getThickness():%0A            print(%22fail: grafite incompativel%22)%0A\n     \n",
+            "lines": "52"
+        },
+        {
+            "label": "2025-11-17_14-21-13",
+            "content": "@@ -976,22 +976,22 @@\n (%22fail: \n-calibr\n+grafit\n e incomp\n@@ -996,9 +996,9 @@\n mpat\n-%C3%AD\n+i\n vel%22\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-21-35",
+            "content": "@@ -1013,21 +1013,19 @@\n   self.b\n-arrel\n+ico\n  = grafi\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-22-01",
+            "content": "@@ -1006,26 +1006,16 @@\n %0A       \n- grafite =\n  self.ba\n@@ -1022,17 +1022,18 @@\n rrel\n-.append()\n+ = grafite\n %0A%0Ade\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-24-29",
+            "content": "@@ -998,32 +998,42 @@\n at%C3%ADvel%22)%0A       \n+ grafite =\n  self.barrel.app\n@@ -1036,23 +1036,16 @@\n .append(\n-grafite\n )%0A%0Adef m\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-24-54",
+            "content": "@@ -246,24 +246,28 @@\n .__thickness\n+Graf\n %7D:%7Bself.__ha\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-27-04",
+            "content": "@@ -673,30 +673,8 @@\n e ==\n- None or self.bico == \n  Non\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-27-43",
+            "content": "@@ -1094,20 +1094,18 @@\n il(0.0, \n-None\n+%22%22\n )%0A%0A    w\n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-28-36",
+            "content": "@@ -655,135 +655,141 @@\n     \n-bico_str = %22%5B%5D%22 if self.bico is None else f%22%5B%7Bself.bico%7D%5D%22%0A        tambor_str = %22%3C%3E%22 if self.barrel == %5B%5D else f%22%3C%7Bself.barrel%7D\n+if self.calibre == None or self.bico ==  None or self.barrel == %5B%5D:%0A            return f%22calibre: %7Bself.calibre%7D, bico: %5B%5D, tambor: %3C\n %3E%22%0A \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-32-45",
+            "content": "@@ -655,16 +655,20 @@\n     bico\n+_str\n  = %22%5B%5D%22 \n@@ -724,16 +724,20 @@\n   tambor\n+_str\n  = %22%3C%3E%22 \n@@ -833,14 +833,21 @@\n co: \n-%7B\n+%5B%7Bself.\n bico%7D\n+%5D\n , ta\n@@ -856,16 +856,23 @@\n or: \n-%7Btambor%7D\n+%3C%7Bself.barrel%7D%3E\n %22%0A  \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-33-48",
+            "content": "@@ -658,27 +658,16 @@\n  bico = \n-%22, %22.join(%5B\n %22%5B%5D%22 if \n@@ -689,32 +689,20 @@\n ne else \n-str(x) for x in \n+f%22%5B%7B\n self.bic\n@@ -702,18 +702,19 @@\n elf.bico\n-%5D)\n+%7D%5D%22\n %0A       \n@@ -727,19 +727,8 @@\n r = \n-%22, %22.join(%5B\n %22%3C%3E%22\n@@ -758,24 +758,12 @@\n lse \n-str(x) for x in \n+f%22%3C%7B\n self\n@@ -769,18 +769,19 @@\n f.barrel\n-%5D)\n+%7D%3E%22\n %0A       \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-41-48",
+            "content": "@@ -657,16 +657,28 @@\n   bico =\n+ %22, %22.join(%5B\n %22%5B%5D%22 if \n@@ -700,20 +700,32 @@\n ne else \n-f%22%5B%7B\n+str(x) for x in \n self.bic\n@@ -725,19 +725,18 @@\n elf.bico\n-%7D%5D%22\n+%5D)\n %0A       \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-42-26",
+            "content": "@@ -733,25 +733,16 @@\n %22.join(%5B\n-tambor = \n %22%3C%3E%22 if \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-45-30",
+            "content": "@@ -717,162 +717,97 @@\n     \n-if self.barrel == %5B%5D:%0A            tambor = %22%3C%3E%22%0A        else:%0A            itens = %22, %22.join(str(x) for x in self.barrel)%0A            tambor = f%22%3C%7Bitens%7D%3E%22\n+tambor = %22, %22.join(%5Btambor = %22%3C%3E%22 if self.barrel == %5B%5D else str(x) for x in self.barrel%5D)\n %0A   \n",
+            "lines": "57"
+        },
+        {
+            "label": "2025-11-17_14-47-25",
+            "content": "@@ -1088,27 +1088,8 @@\n l%22)%0A\n-            return%0A\n     \n",
+            "lines": "61"
+        },
+        {
+            "label": "2025-11-17_14-48-59",
+            "content": "@@ -796,16 +796,18 @@\n tens = %22\n+, \n %22.join(s\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-17_14-49-17",
+            "content": "@@ -787,21 +787,20 @@\n         \n-ponta\n+iten\n s = %22%22.j\n@@ -861,13 +861,12 @@\n f%22%3C%7B\n-ponta\n+iten\n s%7D%3E%22\n",
+            "lines": "62"
+        },
+        {
+            "label": "2025-11-17_14-49-51",
+            "content": "class Lead:\n    def __init__ (self, thickness: float, hardness: str, size: int):\n        self.__thickness: float = thickness\n        self.__hardness: str = hardness\n        self.__size: int = size\n\n    def __str__ (self):\n        return f\"[{self.__thickness}:{self.__hardness}:{self.__size}]\"\n    \n    def getThickness (self):\n        return self.__thickness\n\nclass Pencil:\n    def __init__(self, calibre: float, bico: Lead | None):\n        self.calibre =  None\n        self.bico = None\n        self.barrel: list[Lead] = []\n\n    def initLapiseira(self, tamanho: float):\n        self.calibre = tamanho\n        return True\n    \n    def __str__ (self):\n        bico =\"[]\" if self.bico is None else f\"[{self.bico}]\"\n        if self.barrel == []:\n            tambor = \"<>\"\n        else:\n            pontas = \"\".join(str(x) for x in self.barrel)\n            tambor = f\"<{pontas}>\"\n        return f\"calibre: {self.calibre}, bico: {bico}, tambor: {tambor}\"\n    \n    def insert (self, grafite: Lead):\n        if self.calibre != grafite.getThickness():\n            print(\"fail: calibre incompat\u00edvel\")\n            return\n        self.barrel.append(grafite)\n\ndef main():\n    lapiseira = Pencil(0.0, None)\n\n    while True:\n        line = input()\n        args: list[str] = line.split(\" \")\n        print(\"$\" + line)\n\n        if args [0] == \"end\":\n            break\n        elif args [0] == \"init\":\n            tamanho = float(args[1])\n            lapiseira.initLapiseira(tamanho)\n        elif args [0] == \"show\":\n            print(lapiseira)\n        elif args [0] == \"insert\":\n            thickness = float(args[1])\n            hardness = args[2]\n            size = int(args[3])\n            grafite = Lead(thickness, hardness, size)\n            lapiseira.insert(grafite)\n        else:\n            print(\"fail: comando invalido\")\n\nmain()",
+            "lines": "62"
+        }
+    ]
+}
