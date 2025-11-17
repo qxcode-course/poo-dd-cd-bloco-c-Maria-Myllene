@@ -9,6 +9,28 @@ class Lead:
     
     def getThickness (self):
         return self.__thickness
+    
+    def getSize (self):
+        return self.__size
+    
+    def setSize(self, tamanho: int):
+        self.__size = tamanho
+        return self.__size
+    
+    def usagePerSheet (self):
+        if self.__hardness == "HB":
+            self.__size -= 1
+            return 1
+        if self.__hardness == "2B":
+            self.__size -= 2
+            return 2
+        if self.__hardness == "4B":
+            self.__size -= 4
+            return 4
+        if self.__hardness == "6B":
+            self.__size -= 6
+            return 6
+
 
 class Pencil:
     def __init__(self, calibre: float, bico: Lead | None):
@@ -21,7 +43,7 @@ class Pencil:
         return True
     
     def __str__ (self):
-        bico ="[]" if self.bico is None else f"[{self.bico}]"
+        bico ="[]" if self.bico is None else f"{self.bico}"
         if self.barrel == []:
             tambor = "<>"
         else:
@@ -34,6 +56,32 @@ class Pencil:
             print("fail: calibre incompatível")
             return
         self.barrel.append(grafite)
+    
+    def pull (self):
+        if self.bico != None:
+            print ("fail: ja existe grafite no bico")
+            return
+        self.bico = self.barrel[0]
+        del self.barrel[0]
+    
+    def remove (self):
+        if self.bico != None:
+            self.bico = None
+            return
+    
+    def write (self):
+        if self.bico == None:
+            print ("fail: nao existe grafite no bico")
+            return
+        if self.bico.getSize() == 10:
+            print ("fail: tamanho insuficiente")
+            return
+        self.bico.usagePerSheet()
+        if self.bico.getSize() < 10:
+            self.bico.setSize(10)
+            print("fail: folha incompleta")
+            return        
+
 
 def main():
     lapiseira = Pencil(0.0, None)
@@ -56,6 +104,12 @@ def main():
             size = int(args[3])
             grafite = Lead(thickness, hardness, size)
             lapiseira.insert(grafite)
+        elif args [0] == "pull":
+            lapiseira.pull()
+        elif args [0] == "remove":
+            lapiseira.remove()
+        elif args [0] == "write":
+            lapiseira.write()
         else:
             print("fail: comando invalido")
 
