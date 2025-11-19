@@ -12,7 +12,6 @@ class Client:
 
 class Theater:
     def __init__ (self, capacity: int):
-        self
         self.seats: list [Client | None] = []
         for i in range (capacity):
             self.seats.append(None)
